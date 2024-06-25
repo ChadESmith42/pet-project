@@ -1,1 +1,23 @@
-<p>pet works!</p>
+@if(pet$ | async; as pet) {
+  <section>
+    <h3>{{ pet.name }}</h3>
+    <article>
+      <div>Breed: {{ pet.breed }}</div>
+      <div>Birthday: {{ pet.birthday.toLocaleString('en-US', { timeZone: 'UTC' })| date:'M/d/yyyy' }}</div>
+      <div>Sex: {{ pet.sex }} / {{ pet.breedingStatus }}</div>
+      <div>Weight: {{ pet.weight }}</div>
+      <div>
+        @for(color of pet.color; track color;let last = $last) {
+          @if(!last) {
+            <span class="color">{{ color }} / </span>
+          } @else {
+            <span class="color">{{ color }}</span>
+          }
+        } @empty {
+          <span>Color not available.</span>
+        }
+      </div>
+      <div></div>
+    </article>
+  </section>
+}

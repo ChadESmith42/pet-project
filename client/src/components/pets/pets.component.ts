@@ -3,6 +3,7 @@ import { PetService } from '../../services/pet.service';
 import { Observable, map } from 'rxjs';
 import { Pet } from '../../models/pet';
 import { AsyncPipe, DatePipe } from '@angular/common';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-pets',
@@ -10,11 +11,17 @@ import { AsyncPipe, DatePipe } from '@angular/common';
   imports: [
     AsyncPipe,
     DatePipe,
+    RouterModule,
   ],
   templateUrl: './pets.component.html',
   styleUrl: './pets.component.scss'
 })
 export class PetsComponent {
   private _petService: PetService = inject(PetService);
+  private _router: Router = inject(Router);
   pets$: Observable<Pet[]> = this._petService.getPets();
+
+  goToPet(id: number): void {
+    this._router.navigate([`/pets/${id}`]);
+  }
 }

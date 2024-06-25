@@ -13,9 +13,13 @@
           } @else {
             <span class="color">{{ color }}</span>
           }
+        } @empty {
+          <span>Color not available.</span>
         }
       </div>
-      <div></div>
+      <button type="button" (click)="goToPet(pet.id)">View Pet</button>
     </article>
   </section>
+} @empty {
+  <p>No pets found. Please try again later.</p>
 }
