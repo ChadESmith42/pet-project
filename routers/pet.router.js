@@ -8,6 +8,7 @@ router.get('/', (req, res) => {
         sex: 'Male',
         birthday: new Date(2019, 6, 1),
         breed: 'Golden Retriever',
+        breedingStatus: 'Neutered',
         color: ['Red'],
         weight: 80,
     }, {
@@ -16,6 +17,7 @@ router.get('/', (req, res) => {
         sex: 'Male',
         birthday: new Date(2014, 9, 12),
         breed: 'German Shepherd',
+        breedingStatus: 'Neutered',
         color: ['Black', 'Tan'],
         weight: 110,
     }]);
