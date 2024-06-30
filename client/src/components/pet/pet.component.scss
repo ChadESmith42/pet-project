@@ -1,0 +1,12 @@
+.pet-container {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0;
+  margin-left: 1rem;
+}
+
+.pet-details {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.5rem;
+}
