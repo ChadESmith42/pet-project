@@ -23,7 +23,7 @@ export class PetsComponent {
   private _router: Router = inject(Router);
   pets$: Observable<Pet[]> = this._petService.getPets();
 
-  goToPet(id: number): void {
+  goToPet(id: string): void {
     this._router.navigate([`/pets/${id}`]);
   }
 }

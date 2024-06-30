@@ -21,7 +21,7 @@ export class PetComponent {
   private _petService: PetService = inject(PetService);
   private _router: Router = inject(Router);
   pet$: Observable<Pet> = of({
-    id: 0,
+    id: '0',
     name: '',
     sex: '',
     breed: '',
