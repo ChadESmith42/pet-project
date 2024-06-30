@@ -1,25 +1,27 @@
-@for(pet of pets$ | async; track pet; let last = $last;) {
-  <section>
-    <h3>{{ pet.name }}</h3>
-    <article>
-      <div>Breed: {{ pet.breed }}</div>
-      <div>Birthday: {{ pet.birthday.toLocaleString('en-US', { timeZone: 'UTC' })| date:'M/d/yyyy' }}</div>
-      <div>Sex: {{ pet.sex }} / {{ pet.breedingStatus }}</div>
-      <div>Weight: {{ pet.weight }}</div>
-      <div>
-        @for(color of pet.color; track color;let last = $last) {
-          @if(!last) {
-            <span class="color">{{ color }} / </span>
-          } @else {
-            <span class="color">{{ color }}</span>
+<div class="pet-list-container">
+  @for(pet of pets$ | async; track pet; let last = $last;) {
+    <section class="pet-container">
+      <h3>{{ pet.name }}</h3>
+      <article class="pet-details">
+        <div>Breed: {{ pet.breed }}</div>
+        <div>Birthday: {{ pet.birthday.toLocaleString('en-US', { timeZone: 'UTC' })| date:'M/d/yyyy' }}</div>
+        <div>Sex: {{ pet.sex }} / {{ pet.breedingStatus }}</div>
+        <div>Weight: {{ pet.weight }}</div>
+        <div>
+          @for(color of pet.color; track color;let last = $last) {
+            @if(!last) {
+              <span class="color">{{ color }} / </span>
+            } @else {
+              <span class="color">{{ color }}</span>
+            }
+          } @empty {
+            <span>Color not available.</span>
           }
-        } @empty {
-          <span>Color not available.</span>
-        }
-      </div>
-      <button type="button" mat-flat-button [color]="'accent'" (click)="goToPet(pet.id)">View Pet</button>
-    </article>
-  </section>
-} @empty {
-  <p>No pets found. Please try again later.</p>
-}
+        </div>
+        <button type="button" mat-flat-button [color]="'accent'" (click)="goToPet(pet.id)">View Pet</button>
+      </article>
+    </section>
+  } @empty {
+    <p>No pets found. Please try again later.</p>
+  }
+</div>
