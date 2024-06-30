@@ -1,9 +1,10 @@
+import { AsyncPipe, DatePipe } from '@angular/common';
 import { Component, Input, inject } from '@angular/core';
-import { PetService } from '../../services/pet.service';
+import { MatButtonModule } from '@angular/material/button';
+import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { Pet } from '../../models/pet';
-import { AsyncPipe, DatePipe } from '@angular/common';
-import { Router } from '@angular/router';
+import { PetService } from '../../services/pet.service';
 
 @Component({
   selector: 'app-pet',
@@ -11,6 +12,7 @@ import { Router } from '@angular/router';
   imports: [
     AsyncPipe,
     DatePipe,
+    MatButtonModule,
   ],
   templateUrl: './pet.component.html',
   styleUrl: './pet.component.scss',

@@ -17,7 +17,7 @@
           <span>Color not available.</span>
         }
       </div>
-      <button type="button" (click)="goToPet(pet.id)">View Pet</button>
+      <button type="button" mat-flat-button [color]="'accent'" (click)="goToPet(pet.id)">View Pet</button>
     </article>
   </section>
 } @empty {

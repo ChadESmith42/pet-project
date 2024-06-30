@@ -4,6 +4,7 @@ import { Observable, map } from 'rxjs';
 import { Pet } from '../../models/pet';
 import { AsyncPipe, DatePipe } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-pets',
@@ -11,6 +12,7 @@ import { Router, RouterModule } from '@angular/router';
   imports: [
     AsyncPipe,
     DatePipe,
+    MatButtonModule,
     RouterModule,
   ],
   templateUrl: './pets.component.html',
