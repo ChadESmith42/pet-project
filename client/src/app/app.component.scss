@@ -1,0 +1,16 @@
+.app {
+  display: grid;
+  grid-template-rows: [startHeader] 4rem [endHeader startMain] 85vh [endMain startFooter] auto [endFooter];
+}
+
+.header {
+  grid-row: startHeader / endHeader;
+}
+
+.main {
+  grid-row: startMain / endMain;
+}
+
+.footer {
+  grid-row: startFooter / endFooter;
+}
